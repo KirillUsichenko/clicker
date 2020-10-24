@@ -86,15 +86,12 @@ function renderBox() {
 
     box.style.height = box.style.width = boxSize + 'px'
     box.style.position = 'absolute'
-  
     box.style.top = getRandom(0, maxTop) + 'px'
     box.style.left = getRandom(0, maxLeft) + "px"
     box.style.backgroundColor = "rgb(" +
           String(getRandom(0, 256)) + "," +
           String(getRandom(0, 256)) + "," +
           String(getRandom(0, 256)) + ")"
-    box.style.backgroundColor = getSe
-    
     box.style.cursor= 'pointer'
     box.setAttribute("data-box", "true")
 
