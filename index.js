@@ -50,15 +50,17 @@ function setGameTime() {
     
     let time = +$gameTime.value
     $time.textContent = time.toFixed(1)
-    hide($timeHeader);
-    show($resultHeader);
+    hide($resultHeader);
+    show($timeHeader);
 }
 
 function endGame() {
     isGameStarted = false
     setGameScore()
     $gameTime.removeAttribute("disabled")
+    hide($timeHeader)
     show($start)
+    show($resultHeader)
     $game.innerHTML = ''
     $game.style.backgroundColor = '#ccc'
     
@@ -88,10 +90,10 @@ function renderBox() {
     box.style.position = 'absolute'
     box.style.top = getRandom(0, maxTop) + 'px'
     box.style.left = getRandom(0, maxLeft) + "px"
-    box.style.backgroundColor = "rgb(" +
-          String(getRandom(0, 256)) + "," +
-          String(getRandom(0, 256)) + "," +
-          String(getRandom(0, 256)) + ")"
+    box.style.backgroundColor = "rgb(" + 
+        getRandom(0, 255) + "," +
+        getRandom(0, 255) + "," +
+        getRandom(0, 255) + ")";
     box.style.cursor= 'pointer'
     box.setAttribute("data-box", "true")
 
